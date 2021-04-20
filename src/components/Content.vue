@@ -6,4 +6,8 @@
 export default {};
 </script>
 
-<style scoped></style>
+<style scoped>
+div {
+	flex: 2;
+}
+</style>
