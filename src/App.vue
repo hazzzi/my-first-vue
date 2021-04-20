@@ -1,5 +1,7 @@
 <template>
 	<div id="app">
+		<h1>{{ title }}</h1>
+		<input v-model="title" type="text" />
 		<Webtoon :items="webtoons" />
 	</div>
 </template>
@@ -12,6 +14,7 @@ export default {
 	},
 	data() {
 		return {
+			title: '',
 			webtoons: [
 				{
 					name: '햄스터와 그녀',
