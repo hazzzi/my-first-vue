@@ -4,13 +4,14 @@
 		<ul class="wrap">
 			<li
 				class="item"
-				v-for="({ name, link, img }, idx) in items"
+				v-for="({ name, link, img, isUpdate }, idx) in items"
 				:key="{ idx }"
 			>
 				<a :href="link" target="_blank">
 					<img :src="img" />
 					<span class="title">제목: {{ name }}</span>
 				</a>
+				<span class="tag" v-if="isUpdate">N</span>
 			</li>
 		</ul>
 	</div>
@@ -45,6 +46,7 @@ li {
 }
 
 .item {
+	position: relative;
 	border-bottom: 1px solid #ebebeb;
 	margin-bottom: 25px;
 }
@@ -61,5 +63,16 @@ img {
 	width: 100%;
 	background: #ebebeb;
 	border-radius: 4px;
+}
+
+.tag {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	padding: 5px 30px;
+	color: #fff;
+	border-radius: 4px;
+	background: #fc2332;
+	font-weight: bold;
 }
 </style>
